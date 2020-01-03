@@ -8,27 +8,12 @@ public class SnakeOrLadder {
         this.name=name;
         this.endingPosition=endingPosition;
     }
-
     public int getEndingPosition() {
-
         return endingPosition;
     }
-
-    public void setEndingPosition(int endingPosition) {
-
-        this.endingPosition = endingPosition;
-    }
-
     public String getName() {
-
         return name;
     }
-
-    public void setName(String name) {
-
-        this.name = name;
-    }
-
     public int getStartingPosition() {
         return startingPosition;
     }
