@@ -20,9 +20,19 @@ public class Board {
     }
     boolean checkForSnakeOrLadder(int position){
         return map.containsKey(position);
-
     }
-
+    SnakeOrLadder getSnakeOrLadder(int position){
+        return map.get(position);
+    }
+    int giveNewPosition(int position){
+        SnakeOrLadder snakeOrLadder;
+        if(checkForSnakeOrLadder(position)){
+            snakeOrLadder=getSnakeOrLadder(position);
+            System.out.println("got a "+snakeOrLadder.getName());
+            position=snakeOrLadder.getEndingPosition();
+        }
+        return position;
+    }
 
 
 }

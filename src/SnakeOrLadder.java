@@ -4,13 +4,15 @@ public class SnakeOrLadder {
      private int endingPosition;
 
     public SnakeOrLadder(String name,int startingPosition,int endingPosition) {
-        this.startingPosition = startingPosition;
         this.name=name;
+        this.startingPosition = startingPosition;
         this.endingPosition=endingPosition;
     }
+
     public int getEndingPosition() {
         return endingPosition;
     }
+
     public String getName() {
         return name;
     }
@@ -18,7 +20,4 @@ public class SnakeOrLadder {
         return startingPosition;
     }
 
-    public void setStartingPosition(int startingPosition) {
-        this.startingPosition = startingPosition;
-    }
 }
