@@ -17,24 +17,20 @@ public class Game {
     }
 
 
-    Player changeTurn(){
+    void changeTurn(){
         if(currentPlayer==player1){
             System.out.println(player2.getName()+"'s turn");
-            return player2;
+            currentPlayer=player2;
         }
             System.out.println(player1.getName()+"'s turn");
-            return player1;
+            currentPlayer =player1;
     }
 
 
-    boolean checkWhetherGameOver(){
+    boolean isGameOver(){
         int winningPosition=100;
-        if(player1.getPosition()==winningPosition){
-            System.out.println(player1.getName()+" has won the game");
-            return true;
-        }
-        else if(player2.getPosition()==winningPosition){
-            System.out.println(player2.getName()+" has won the game");
+        if(currentPlayer.getPosition()==winningPosition){
+            System.out.println(currentPlayer.getName()+" has won the game");
             return true;
         }
         return false;
@@ -46,18 +42,16 @@ public class Game {
     }
 
     void startGame(){
-        Scanner scan=new Scanner(System.in);
         int diceNumber,newPosition,oldPosition;
-        while(!checkWhetherGameOver()){
+        while(!isGameOver()){
             displayPlayer();
-            scan.nextLine();
             diceNumber=currentPlayer.rollDice(dice);
             oldPosition=currentPlayer.getPosition();
             newPosition=oldPosition+diceNumber;
             newPosition=board.giveNewPosition(newPosition);
             currentPlayer.move(newPosition);
             if(diceNumber!=6){
-                currentPlayer=changeTurn();
+                changeTurn();
             }
         }
     }

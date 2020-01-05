@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Player {
     private String name;
     private int position;
@@ -21,6 +23,9 @@ public class Player {
         }
     }
     int rollDice(Dice dice){
+        Scanner scan=new Scanner(System.in);
+        System.out.println("Press enter to roll die");
+        scan.nextLine();
         return dice.roll();
     }
 }

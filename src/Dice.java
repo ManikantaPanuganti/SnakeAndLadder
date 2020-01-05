@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Dice {
     int roll(){
         double d= (Math.random()*6);
